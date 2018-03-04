@@ -3,6 +3,8 @@
 #include <dbg.h>
 #include "list.h"
 
+int id = 0;
+
 void List_print(Node **headRef)
 {
     if(headRef == NULL) {
@@ -19,9 +21,9 @@ void List_print(Node **headRef)
 
 void List_push(struct Node **headRef, void *newData)
 {
-    if(headRef == NULL) {
-        log_warn("List is empty");
-    }
+     if(*headRef == NULL) {
+         /*log_warn("List is empty");*/
+     }
 
     Node *newNode = malloc(sizeof(Node));
     newNode->data = newData;
@@ -47,6 +49,8 @@ Node *List_remove(struct Node **headRef, int id)
             nodeToDelete = current;
             if(current->next) {
                 nodeToMove = current->next;
+            } else {
+                nodeToMove = NULL;
             }
             *headRef = nodeToMove;
             nodeNext = (listAmt == 1) ? NULL : *headRef;

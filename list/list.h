@@ -9,7 +9,7 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
-int id = 0;
+extern int id;
 
 void List_push(struct Node **headRef, void *newData);
 int List_count(Node *headRef);
