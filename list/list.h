@@ -1,18 +1,15 @@
 #ifndef list_h
 #define list_h
 
-#include <stdlib.h>
-
 typedef struct Node {
     void *data;
-    int id;
     struct Node *next;
 } Node;
 
-extern int id;
+Node *List_create(void *data);
+int List_push(Node **head_ref, void *data);
+int List_unshift(Node **head_ref, void *data);
+int List_count(Node *head_ref);
+int List_cleanup(Node **head_ref);
 
-void List_push(struct Node **headRef, void *newData);
-int List_count(Node *headRef);
-Node *List_remove(struct Node **headRef, int id);
-void List_destroy(struct Node **headRef);
 #endif

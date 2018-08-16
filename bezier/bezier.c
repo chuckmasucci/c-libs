@@ -1,4 +1,5 @@
 #include "bezier.h"
+#include <dbg.h>
 
 Vector2 getQuadraticPoint(float t, Vector2 p0, Vector2 p1, Vector2 p2)
 {
