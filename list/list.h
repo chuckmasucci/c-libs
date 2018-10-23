@@ -2,14 +2,14 @@
 #define list_h
 
 typedef struct Node {
-    void *data;
-    struct Node *next;
+    void* data;
+    struct Node* next;
 } Node;
 
-Node *List_create(void *data);
-int List_push(Node **head_ref, void *data);
-int List_unshift(Node **head_ref, void *data);
-int List_count(Node *head_ref);
-int List_cleanup(Node **head_ref);
+Node* List_create();
+int List_push(Node** head_ref, void* data);
+int List_unshift(Node** head_ref, void* data);
+int List_count(Node* head_ref);
+int List_cleanup(Node** head_ref);
 
 #endif
