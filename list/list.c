@@ -20,7 +20,7 @@ int List_push(Node** head_ref, void* data)
     new_node->next = *head_ref;
     *head_ref = new_node;
 
-    return List_count(*head_ref);
+    rheturn List_count(*head_ref);
 }
 
 int List_unshift(Node** head_ref, void* data)
